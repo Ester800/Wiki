@@ -1,0 +1,23 @@
+<h1>Delete Cube</h1>
+<div class="form">
+  <form action='/delete/{{item._id}}' method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value={{item.name}} disabled="true"/>
+    <label for="name">Description</label>
+    <textarea id="name" name="description" disabled="true"/>{{item.description}}</textarea>
+    <label for="image">ImageUrl</label>
+    <input type="text" id="image" name="imageUrl" value={{item.imageUrl}} disabled="true"/>
+    <label for="difficulty">Category</label>
+    <select id="difficulty" name="difficultyLevel" value={{item.category}} disabled="true"/>  <!--not selecting-->
+      <option value="Automobiles">Automobiles</option>
+      <option value="Personal_Belongings">Personal Belongings</option>
+      <option value="Household_Items">Household Items</option>
+      <option value="Digital_Goods">Digital Goods</option>
+      <option value="Memorabilia">Memorabilia</option>
+      <option value="Antiques">Antiques</option>
+      <option value="Jewelry">Jewelry</option>
+    </select>
+    <input type="submit" value="Delete">
+  </form>
+</div>
+© 2021 GitHub, Inc.
