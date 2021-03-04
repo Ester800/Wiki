@@ -1,19 +1,26 @@
 {
-  "name": "wiki",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "topic-3---back-end-express-js-and-templating",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "nodemon index.js"
+    "start": "nodemon ./bin/www"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "mongodb": "^3.6.4",
-    "node": "^15.8.0",
-    "nodemon": "^2.0.7"
-  },
-  "devDependencies": {},
-  "description": ""
+    "express-handlebars": "^5.2.0",
+    "express-search": "^1.0.3",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.9.2",
+    "hbs": "^4.1.1",
+    "http-errors": "~1.6.3",
+    "mongoose": "^5.11.17",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0"
+  }
 }

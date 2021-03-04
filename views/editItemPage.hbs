@@ -1,0 +1,63 @@
+<h1>Edit Item</h1>
+<div class="form">
+    <h2>{{item.name}}</h2>
+    <img class="cube" src={{item.imageUrl}}>
+    <form action='/blockchain/attach/{{item._id}}' method="POST">
+        {{#if dropdownBlockchains}}
+            <label for="accessory">Available Blockchains</label>
+            <select id="accessory" name="accessory">
+
+                <!-- insert list of blockchains not including those already attached to the cube -->
+                {{#each dropdownBlockchains}}
+                    <option value={{_id}}>{{name}}</option>
+                {{/each}}
+
+            </select>
+            <input type="submit" value="Attach">
+        {{else}}
+            <div class="details">
+                <h2 align="center">Suggested Blockchain</h2>
+            </div>
+            
+        {{/if}}
+    </form>
+    {{#if item.blockchains}}
+    <h2>Available Blockchains</h2>
+    <ul>
+        {{#each item.blockchains}}
+        <li><h3>{{name}}</h3></li>
+        {{/each}}
+    </ul>
+    {{else}}
+        {{#if dropdownBlockchains}}
+            <!--if accessories are available to add -->
+            <h3 class="italic">No Blockchains have been listed yet</h3>
+        {{else}}
+            <!--no accessories attached and none in the dropdown -->
+            <h3 class="italic">You need to list a blockchain first!</h3>
+        {{/if}}
+    {{/if}}
+    
+    <a class="btn" href="/">Back</a>
+</div>
+
+
+<div class="form">
+  <form action='/edit/{{item._id}}' method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value={{item.name}}>
+    <label for="name">Description</label>
+    <textarea id="name" name="description">{{item.description}}</textarea>
+    <label for="image">ImageUrl</label>
+    <input type="text" id="image" name="imageUrl" value={{item.imageUrl}}>
+    <label for="difficulty">Category</label>
+    <select id="difficulty" name="difficultyLevel">
+         <option value="Artwork">Artwork</option>
+            <option value="Digital_Media">Digital Media</option>
+            <option value="Memorabilia">Memorabilia</option>
+            <option value="Antiques">Antiques</option>
+            <option value="Jewelry">Jewelry</option>
+    </select>
+    <input type="submit" value="Edit">
+  </form>
+</div>
