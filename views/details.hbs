@@ -1,0 +1,36 @@
+
+    <h1>{{item.name}}</h1>
+<img class="cube" src={{item.imageUrl}}>
+<div class="details">
+    <p><span>Category:</span> {{item.category}}</p>
+    <p><span>Description:</span> {{item.description}}</p>
+    
+    {{#if isCreator}}
+    <div align="center">
+        <a class="btn" href="/">Back</a>
+        {{#if loggedInUser}}
+        <a class="btn" href="/blockchain/attach/{{item._id}}">Blockchain</a>
+        <a class="btn" href="/edit/{{item._id}}">Edit</a>
+        <a class="btn" href="/delete/{{item._id}}">Delete</a>
+    {{/if}}
+    </div>
+    {{else}}
+    <div>
+        <a class="btn" href="/">Back</a>
+    </div>
+    {{/if}}
+
+</div>
+
+
+<h2>Available Blockchains</h2>
+<div class="accessories">
+    
+    {{#each blockchains}}
+        <div class="accessory">
+            <h3>{{name}}</h3>
+        </div>
+    {{else}}
+        <h3 class="italic">There are no blockchains assigned just yet...please go ahead and assign one! (Must be registered)</h3>
+    {{/each}}
+</div>
